@@ -1,0 +1,56 @@
+{
+  "name": "orm-odm-lecture",
+  "version": "1.0.0",
+  "description": "ORM & ODM Lecture Demo - PostgreSQL with Sequelize and MongoDB with Mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test:postgres": "ts-node src/test-postgres.ts",
+    "test:mongo": "ts-node src/test-mongo.ts",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "orm-migration": "node scripts/create-migration.js",
+    "orm-migrate": "npx sequelize-cli db:migrate",
+    "orm-model": "node scripts/generate-model-from-table.js",
+    "orm-ts-model": "node scripts/generate-typescript-model.js",
+    "odm-migration": "node scripts/create-mongo-migration.js",
+    "odm-migrate": "echo 'Run: node migrations/mongodb/[timestamp]-init-[collection].js up'",
+    "odm-model": "node scripts/generate-mongoose-model.js",
+    "seed": "npx sequelize-cli db:seed:all",
+    "seed:undo": "npx sequelize-cli db:seed:undo:all",
+    "seed:users": "npx sequelize-cli db:seed --seed 001-demo-users.js",
+    "seed:posts": "npx sequelize-cli db:seed --seed 002-demo-posts.js"
+  },
+  "keywords": [
+    "orm",
+    "odm",
+    "sequelize",
+    "mongoose",
+    "postgresql",
+    "mongodb",
+    "lecture",
+    "demo"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^24.2.1",
+    "@types/pg": "^8.15.5",
+    "@types/sequelize": "^4.28.20",
+    "nodemon": "^3.1.10",
+    "sequelize-cli": "^6.6.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^4.19.2",
+    "mongoose": "^8.17.1",
+    "mysql2": "^3.14.3",
+    "pg": "^8.16.3",
+    "sequelize": "^6.37.7"
+  }
+}
